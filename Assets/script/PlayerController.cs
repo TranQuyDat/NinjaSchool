@@ -22,11 +22,9 @@ public class PlayerController : MonoBehaviour
         if (rb.velocity.x == 0)
         {
             animator.SetBool("walk", false);
-            animator.SetBool("atk", false);
             return;
         }
         animator.SetBool("walk", true);
-        animator.SetBool("atk", false);
         
         Vector3 pos = new Vector3(Input.GetAxis("Horizontal"),0,0);
         rb.MovePosition(this.transform.position + pos * moveSpeed * Time.deltaTime);
@@ -40,5 +38,11 @@ public class PlayerController : MonoBehaviour
             (rb.velocity.x < 0) ? -1 * Mathf.Abs(cur_scale) : Mathf.Abs(cur_scale),
             1, 0
         );
+    }
+
+
+    public void endAtack()
+    {
+        animator.SetBool("atk", false);
     }
 }
