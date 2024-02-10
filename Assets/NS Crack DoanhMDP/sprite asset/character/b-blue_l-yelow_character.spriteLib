@@ -22,6 +22,11 @@ MonoBehaviour:
       m_Sprite: {fileID: 21300000, guid: bd3ce6b0be39be94284d65b96b5302e1, type: 3}
       m_FromMain: 1
       m_SpriteOverride: {fileID: 21300000, guid: bd3ce6b0be39be94284d65b96b5302e1, type: 3}
+    - m_Name: New Label_0
+      m_Hash: 16589798
+      m_Sprite: {fileID: 21300000, guid: 1ec118475d6fdcd48b9f1d6f9f4e0ff8, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 1ec118475d6fdcd48b9f1d6f9f4e0ff8, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 0
   - m_Name: idle_leg
@@ -33,6 +38,11 @@ MonoBehaviour:
       m_Sprite: {fileID: 21300000, guid: 20dda5a386c96594fabea08b97bb9594, type: 3}
       m_FromMain: 1
       m_SpriteOverride: {fileID: 21300000, guid: f24c661b398c5be45a005087dbb38c30, type: 3}
+    - m_Name: New Label_0
+      m_Hash: 16589798
+      m_Sprite: {fileID: 21300000, guid: 1ec118475d6fdcd48b9f1d6f9f4e0ff8, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 21300000, guid: 1ec118475d6fdcd48b9f1d6f9f4e0ff8, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 1
   - m_Name: walk_body
@@ -110,9 +120,9 @@ MonoBehaviour:
       m_Hash: 417444970
       m_Sprite: {fileID: 21300000, guid: 61c3d6ad1f135974daaf5e158c34dd2b, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 21300000, guid: 61c3d6ad1f135974daaf5e158c34dd2b, type: 3}
+      m_SpriteOverride: {fileID: 21300000, guid: d4528fc5966abb747aef97f93cac3399, type: 3}
     m_FromMain: 1
-    m_EntryOverrideCount: 0
+    m_EntryOverrideCount: 1
   - m_Name: jump_leg
     m_Hash: 236856948
     m_CategoryList: []
@@ -192,5 +202,5 @@ MonoBehaviour:
     m_FromMain: 1
     m_EntryOverrideCount: 2
   m_PrimaryLibraryGUID: 3983f1efe4946d4468162b0811e5271c
-  m_ModificationHash: 638430171011244632
+  m_ModificationHash: 638432070122469902
   m_Version: 1

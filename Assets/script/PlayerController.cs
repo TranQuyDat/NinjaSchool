@@ -13,16 +13,15 @@ public class PlayerController : MonoBehaviour
     public Transform checkground;
     public float radiusground;
     public LayerMask layerMaskground;
-    bool isjumping;
+    public bool isjumping;
     private void Update()
     {
         rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), rb.velocity.y);
         checkGrounded();
         jump();
-        if (isjumping)
-        {
-            animator.SetFloat("y_velocity",Mathf.Round(rb.velocity.y));
-        }
+        
+            animator.SetFloat("y_velocity",rb.velocity.y);
+   
         atk();
     }
     private void FixedUpdate()
@@ -34,14 +33,15 @@ public class PlayerController : MonoBehaviour
     }
     public void move()
     {
-        if (rb.velocity.x == 0)
+        Vector3 pos = new Vector3(Input.GetAxisRaw("Horizontal"),0, 0);
+        this.transform.position += pos * moveSpeed * Time.deltaTime;
+        if (rb.velocity.x == 0 || isjumping)
         {
             animator.SetBool("walk", false);
             return;
         }
-        Vector3 pos = new Vector3(Input.GetAxisRaw("Horizontal"), transform.position.y, 0);
-        this.transform.position += pos * moveSpeed * Time.deltaTime;
         animator.SetBool("walk", true);
+        animator.SetBool("jump", false);
         
     }
     public void flip()
@@ -57,15 +57,20 @@ public class PlayerController : MonoBehaviour
 
     public void jump()
     {
-        if (isgrounded && (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)))
+        if (isgrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
             isjumping = true;
             rb.velocity =  new Vector2 (rb.velocity.x ,powerjump);
         }
-        if(isgrounded && !isjumping)
+        if (isgrounded && !isjumping)
         {
             animator.SetBool("jump", false);
-        }else animator.SetBool("jump", true);
+        }
+        else
+        {
+            animator.SetBool("walk", false);
+            animator.SetBool("jump", true);
+        }
     }
     public void checkGrounded()
     {
@@ -73,12 +78,13 @@ public class PlayerController : MonoBehaviour
         if (circlehit !=null && circlehit.CompareTag("ground") && !isgrounded)
         {
             isgrounded = true;
+            isjumping = false;
             return;
         }
         else if(circlehit == null  && isgrounded)
         {
             isgrounded = false;
-            isjumping = false;
+            
         }
     }
 
@@ -97,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(checkground.position, radiusground);
     }
 }
