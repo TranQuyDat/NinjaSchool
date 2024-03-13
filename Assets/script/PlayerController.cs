@@ -9,101 +9,125 @@ public class PlayerController : MonoBehaviour
     public float damage;
     public Rigidbody2D rb;
     public Animator animator;
-    public bool isgrounded;
+    
     public Transform checkground;
-    public float radiusground;
+    public Vector2 box;
     public LayerMask layerMaskground;
-    public bool isjumping;
+
+    bool isgrounded;
+    bool isAtk;
+    bool isjumping;
+    int lvJump = 1;
+    int num_jump = 0;
+    public int combo = 2;
+    float axisraw_x;
     private void Update()
     {
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), rb.velocity.y);
-        checkGrounded();
-        jump();
+        axisraw_x = Input.GetAxisRaw("Horizontal");
+
+        animator.SetFloat("speed",Mathf.Abs(axisraw_x) );
         
-            animator.SetFloat("y_velocity",rb.velocity.y);
+        jump();
+        checkGrounded();
+        animator.SetFloat("y_velocity",Mathf.Round (Mathf.Clamp( rb.velocity.y,0,3) ));
    
         atk();
     }
     private void FixedUpdate()
     {
+        
         move();
         flip();
-        
-        
     }
     public void move()
     {
+        if (isAtk) return;
         Vector3 pos = new Vector3(Input.GetAxisRaw("Horizontal"),0, 0);
-        this.transform.position += pos * moveSpeed * Time.deltaTime;
-        if (rb.velocity.x == 0 || isjumping)
-        {
-            animator.SetBool("walk", false);
-            return;
-        }
-        animator.SetBool("walk", true);
-        animator.SetBool("jump", false);
         
+        this.transform.position += pos * moveSpeed * Time.deltaTime;    
     }
     public void flip()
     {
         float cur_scale = this.transform.localScale.x;
-        if (rb.velocity.x == 0 || (rb.velocity.x < 0 && cur_scale < 0) || (rb.velocity.x > 0 && cur_scale > 0)) return;
+        if (axisraw_x == 0 || (axisraw_x < 0 && cur_scale < 0) || (axisraw_x > 0 && cur_scale > 0)) return;
         
         this.transform.localScale = new Vector3(
-            (rb.velocity.x < 0) ? -1 * Mathf.Abs(cur_scale) : Mathf.Abs(cur_scale),
+            (axisraw_x < 0) ? -1 * Mathf.Abs(cur_scale) : Mathf.Abs(cur_scale),
             1, 0
         );
     }
 
     public void jump()
     {
-        if (isgrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
+        if (Input.GetKeyDown(KeyCode.Space) && isjumping && num_jump < lvJump)
         {
-            isjumping = true;
-            rb.velocity =  new Vector2 (rb.velocity.x ,powerjump);
+            num_jump = num_jump + 1;
+            rb.velocity = new Vector2(rb.velocity.x, powerjump);
         }
-        if (isgrounded && !isjumping)
+
+        if (Input.GetKey(KeyCode.Space) && (isgrounded))
         {
-            animator.SetBool("jump", false);
+
+            rb.velocity = new Vector2(rb.velocity.x, powerjump);
         }
-        else
-        {
-            animator.SetBool("walk", false);
-            animator.SetBool("jump", true);
-        }
+
     }
     public void checkGrounded()
     {
-        Collider2D circlehit = Physics2D.OverlapCircle(checkground.position, radiusground, layerMaskground);
-        if (circlehit !=null && circlehit.CompareTag("ground") && !isgrounded)
+        Collider2D boxhit = Physics2D.OverlapBox(checkground.position, box,0, layerMaskground);
+        if (boxhit != null && boxhit.CompareTag("ground"))
         {
+            // su kien khi cham dat
             isgrounded = true;
             isjumping = false;
+            num_jump = 0;
+            animator.SetBool("jump", false);
             return;
         }
-        else if(circlehit == null  && isgrounded)
+        else if(boxhit == null  && isgrounded)
         {
+            // su kien khi chua cham dat
             isgrounded = false;
-            
+            isjumping = true;
+            animator.SetBool("jump", true);
         }
     }
 
     public void atk()
     {
-        if(Input.GetKeyDown(KeyCode.E)|| Input.GetKeyDown(KeyCode.KeypadEnter))
+        
+        if( (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.KeypadEnter)) && !isAtk)
         {
+            isAtk = true;
             animator.SetBool("atk", true);
+            animator.SetTrigger("cb" + combo);
+            
+            if (isAtk && isjumping)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y+1f);
+            }
+        }
+    }
+
+    public void StartCombo()
+    {
+        isAtk = false;
+        if(combo < 2)
+        {
+            combo++;
         }
     }
 
     public void endAtack()
     {
         animator.SetBool("atk", false);
+        isAtk = false;
+        combo = 2;
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(checkground.position, radiusground);
+        Gizmos.DrawWireCube(checkground.position, box);
     }
 }

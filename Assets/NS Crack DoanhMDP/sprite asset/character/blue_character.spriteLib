@@ -118,9 +118,9 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: 21300000, guid: 53768b0fabb0ba64baae003c848a333c, type: 3}
     - m_Name: jump3bd
       m_Hash: 417444970
-      m_Sprite: {fileID: 21300000, guid: c727fb5dbe0099144844b986a4ca910e, type: 3}
+      m_Sprite: {fileID: 21300000, guid: b7ea501c34dd8a44ba2e15581fafc951, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: 21300000, guid: d4528fc5966abb747aef97f93cac3399, type: 3}
+      m_SpriteOverride: {fileID: 21300000, guid: 61c3d6ad1f135974daaf5e158c34dd2b, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 2
   - m_Name: jump_leg
@@ -202,5 +202,5 @@ MonoBehaviour:
     m_FromMain: 1
     m_EntryOverrideCount: 2
   m_PrimaryLibraryGUID: cb444b0d43ce9de448c60685fa510509
-  m_ModificationHash: 638432071085629510
+  m_ModificationHash: 638458924472325492
   m_Version: 1
