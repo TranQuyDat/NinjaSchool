@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206263117986899101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.114, y: -0.078, z: 0}
+  m_LocalPosition: {x: -0.114, y: -0.093999915, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -223,7 +223,7 @@ SpriteRenderer:
   m_SortingLayerID: 1212298563
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 61c3d6ad1f135974daaf5e158c34dd2b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd3ce6b0be39be94284d65b96b5302e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -325,7 +325,7 @@ SpriteRenderer:
   m_SortingLayerID: 1212298563
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 43e9fc09112e3ce46a0cbf9cbcfae42a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1af7ee418e7b35248b15182b8604503c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: f7787c138c14f2949b1826c33f1eecaa, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 25e1141cef52804449ced93dc057b599, type: 3}
 --- !u!114 &7133044319250047110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 7170359200423243531}
   - component: {fileID: 8588839732142653733}
   - component: {fileID: 4385141136928882552}
+  - component: {fileID: 136350662363155049}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -650,9 +651,7 @@ MonoBehaviour:
   layerMaskground:
     serializedVersion: 2
     m_Bits: 8
-  isgrounded: 0
-  isAtk: 0
-  isjumping: 0
+  combat: {fileID: 0}
 --- !u!95 &4663325219349374365
 Animator:
   serializedVersion: 5
@@ -712,15 +711,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 213979621
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.87, y: 0.84}
+  m_Size: {x: 0.84, y: 0.87}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -739,12 +738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library:
-  - m_Name: jump_body
-    m_Hash: 0
-    m_CategoryList:
-    - m_Name: jump3bd
-      m_Hash: 0
-      m_Sprite: {fileID: 21300000, guid: 61c3d6ad1f135974daaf5e158c34dd2b, type: 3}
   - m_Name: head
     m_Hash: 0
     m_CategoryList:
@@ -784,7 +777,7 @@ MonoBehaviour:
     - m_Name: Entry_10
       m_Hash: 0
       m_Sprite: {fileID: 21300000, guid: eeba4bdbcd75325499b7d47fd661ad46, type: 3}
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 250f8488fa37a2442b4d68f6facc4586, type: 3}
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 3983f1efe4946d4468162b0811e5271c, type: 3}
 --- !u!70 &4385141136928882552
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -820,6 +813,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.07048643, y: 0.04653582}
   m_Size: {x: 0.6244848, y: 0.97126955}
   m_Direction: 0
+--- !u!114 &136350662363155049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5818430762052243868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064489e7fe37b324aa6d1fab4f829304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cbdata: {fileID: 0}
+  ani: {fileID: 0}
+  comboindex: 0
+  isAtk: 0
+  instance: {fileID: 0}
 --- !u!1 &7491674842246613465
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +904,7 @@ SpriteRenderer:
   m_SortingLayerID: 1212298563
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ba936c6f7d182f49ba1c58d5502c752, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20dda5a386c96594fabea08b97bb9594, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
-[CreateAssetMenu(fileName ="playerdata",menuName ="Data/plauerData")]
+[CreateAssetMenu(fileName ="playerdata",menuName ="Data/playerData")]
 public class playerData : ScriptableObject
 {
     public string name;

@@ -13,18 +13,16 @@ public class PlayerController : MonoBehaviour
     public Transform checkground;
     public Vector2 box;
     public LayerMask layerMaskground;
+    public combatController combat;
 
     bool isgrounded;
-    bool isAtk;
     bool isjumping;
     int lvJump = 1;
     int num_jump = 0;
-    public int combo = 2;
     float axisraw_x;
     private void Update()
     {
         axisraw_x = Input.GetAxisRaw("Horizontal");
-
         animator.SetFloat("speed",Mathf.Abs(axisraw_x) );
         
         jump();
@@ -35,13 +33,12 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
         move();
         flip();
     }
     public void move()
     {
-        if (isAtk) return;
+        if (combat.isAtk) return;
         Vector3 pos = new Vector3(Input.GetAxisRaw("Horizontal"),0, 0);
         
         this.transform.position += pos * moveSpeed * Time.deltaTime;    
@@ -96,34 +93,19 @@ public class PlayerController : MonoBehaviour
     public void atk()
     {
         
-        if( (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.KeypadEnter)) && !isAtk)
+        if( (Input.GetKeyDown(KeyCode.E) ) 
+            && !combat.isAtk)
         {
-            isAtk = true;
-            animator.SetBool("atk", true);
-            animator.SetTrigger("cb" + combo);
+            combat.startCombo();
             
-            if (isAtk && isjumping)
+            if (combat.isAtk && isjumping)
             {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y+1f);
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y+1.5f);
             }
         }
     }
 
-    public void StartCombo()
-    {
-        isAtk = false;
-        if(combo < 2)
-        {
-            combo++;
-        }
-    }
-
-    public void endAtack()
-    {
-        animator.SetBool("atk", false);
-        isAtk = false;
-        combo = 2;
-    }
+   
 
     private void OnDrawGizmosSelected()
     {

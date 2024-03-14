@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+  - wpSlash
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,8 @@ TagManager:
   - ground
   - Water
   - UI
-  - 
-  - 
+  - wpSlash
+  - player
   - 
   - 
   - 
