@@ -25,16 +25,16 @@ public class combatController : MonoBehaviour
     public void nextCombo()
     {
         isAtk = false;
-        ani.SetBool("atk", false);
         if(comboindex < 2)
             comboindex ++;
     }
 
     public void finishCombo()
     {
+        ani.SetBool("atk", false);
         comboindex = 1;
         isAtk = false;
-        ani.SetBool("atk", false);
+        
     }
 
 

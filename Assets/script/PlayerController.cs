@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     float axisraw_x;
     private void Update()
     {
+        rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -4f, 7));
         axisraw_x = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("speed",Mathf.Abs(axisraw_x) );
         
@@ -100,7 +101,7 @@ public class PlayerController : MonoBehaviour
             
             if (combat.isAtk && isjumping)
             {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y+1.5f);
+                rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y,0,7));
             }
         }
     }
