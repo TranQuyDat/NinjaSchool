@@ -1682,7 +1682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1372839843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3583,14 +3583,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1030081632816027916, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5caeac2e06a16314fabe3e32fa3ec899, type: 3}
+    - target: {fileID: 4740003578100682250, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
+      propertyPath: m_labelHash
+      value: 1.2079726e-29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740003578100682250, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
+      propertyPath: m_CategoryHash
+      value: 3.7598915e-25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778206145277727836, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae6903c661b3b354e8def7a2963d5843, type: 3}
     - target: {fileID: 5818430762052243868, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 5818430762052243868, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6456838397130465650, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 532ca8680aac3bd428c4f6cb03d61a76, type: 3}
     - target: {fileID: 6729675473670825216, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3634,6 +3654,14 @@ PrefabInstance:
     - target: {fileID: 6729675473670825216, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882496425370474580, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
+      propertyPath: m_labelHash
+      value: 1.2079726e-29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882496425370474580, guid: 76434bf84cdcbe441ae6eac9b04d4a49, type: 3}
+      propertyPath: m_CategoryHash
+      value: 3.096632e-18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3681,7 +3709,7 @@ SpriteRenderer:
   m_SortingLayerID: 1212298563
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0dd646e90ded236479020ce86fc62148, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa6431e52769dbb489d40300f9fcabc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4179,7 +4207,7 @@ SpriteRenderer:
   m_SortingLayerID: 1212298563
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 824c9a3cc4c8e9a48af91a833a1048a0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56ce6d6fdb43a5d458923190762c650a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4263,7 +4291,7 @@ SpriteRenderer:
   m_SortingLayerID: 1212298563
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 12bfa3a18c4316046946824eab1c9605, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3891cc1466748d84db52a723a1a61684, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4671,7 +4699,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!70 &8317048551849219577
