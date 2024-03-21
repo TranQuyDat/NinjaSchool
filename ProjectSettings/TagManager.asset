@@ -17,7 +17,7 @@ TagManager:
   - wpSlash
   - player
   - step
-  - 
+  - items
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 213979621
+    locked: 0
+  - name: items
+    uniqueID: 4000834451
     locked: 0

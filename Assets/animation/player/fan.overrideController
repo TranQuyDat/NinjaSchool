@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: fan
+  m_Controller: {fileID: 9100000, guid: 8e730c5dc7963324d9ed9e987c62aff1, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 84766dfae1ecd8541af422b9601b975b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 174e793109462cd4a830384e67a00424, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7e80fc212f8ac2c4e9afb84ced0f35b2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 869e5dd5a04bd264c930ff8d8fbe8424, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b0b3253d022cbc148895598fd1de3957, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 98310020139580a4e84262b412d31b46, type: 2}

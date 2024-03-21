@@ -5,6 +5,7 @@ using UnityEngine;
 public class combatController : MonoBehaviour
 {
     public combatData cbdata;
+    public SpriteRenderer wpsprite;
     public Animator ani;
     public int comboindex=1;
     public bool isAtk;
@@ -13,6 +14,13 @@ public class combatController : MonoBehaviour
         ani.runtimeAnimatorController = cbdata.aniController;
         isAtk = false;        
         comboindex = 1;
+    }
+    private void Update()
+    {
+        if (ani.runtimeAnimatorController != cbdata.aniController)
+        {
+            ani.runtimeAnimatorController = cbdata.aniController;
+        }
     }
     public void startCombo()
     {
@@ -34,7 +42,6 @@ public class combatController : MonoBehaviour
         ani.SetBool("atk", false);
         comboindex = 1;
         isAtk = false;
-        
     }
 
 

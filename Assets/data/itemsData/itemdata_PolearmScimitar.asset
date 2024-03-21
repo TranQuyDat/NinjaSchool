@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec54982cc7bf49d44959a338aa4cbd21, type: 3}
+  m_Name: itemdata_PolearmScimitar
+  m_EditorClassIdentifier: 
+  iconIt: {fileID: 21300000, guid: e05450e86987706448fe91c47c0c600a, type: 3}
+  tyleItem: 0
+  wpTyle: 3
+  handleWP: {fileID: 21300000, guid: 85b4bdde159c975468541849d62cca46, type: 3}
+  cbdata: {fileID: 11400000, guid: 2b76d91327f66fa45b74bfc042d4be0f, type: 2}
