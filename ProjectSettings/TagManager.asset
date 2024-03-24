@@ -18,7 +18,7 @@ TagManager:
   - player
   - step
   - items
-  - 
+  - npc
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: bg
+    uniqueID: 3448049559
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -50,12 +53,18 @@ TagManager:
   - name: body
     uniqueID: 1212298563
     locked: 0
-  - name: ui
-    uniqueID: 2268478423
+  - name: npc
+    uniqueID: 465994647
     locked: 0
   - name: player
     uniqueID: 213979621
     locked: 0
   - name: items
     uniqueID: 4000834451
+    locked: 0
+  - name: target
+    uniqueID: 2851406007
+    locked: 0
+  - name: ui
+    uniqueID: 746185919
     locked: 0

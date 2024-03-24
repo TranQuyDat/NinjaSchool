@@ -556,7 +556,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.81, y: 0.63}
+  m_Size: {x: 0.33, y: 0.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -773,6 +773,7 @@ GameObject:
   - component: {fileID: 8588839732142653733}
   - component: {fileID: 136350662363155049}
   - component: {fileID: 8345834181883986544}
+  - component: {fileID: 6293674487384286384}
   m_Layer: 7
   m_Name: player
   m_TagString: Player
@@ -848,6 +849,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   combat: {fileID: 136350662363155049}
+  radiusCircle: 0.5
+  layercheck:
+    serializedVersion: 2
+    m_Bits: 1024
+  target: {fileID: 0}
 --- !u!95 &4663325219349374365
 Animator:
   serializedVersion: 5
@@ -915,7 +921,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.87, y: 0.84}
+  m_Size: {x: 0.85, y: 0.87}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -1026,6 +1032,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.073376596, y: 0.07902181}
   m_Size: {x: 0.45739424, y: 0.8419564}
   m_Direction: 0
+--- !u!210 &6293674487384286384
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5818430762052243868}
+  m_Enabled: 1
+  m_SortingLayerID: 213979621
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &7491674842246613465
 GameObject:
   m_ObjectHideFlags: 0

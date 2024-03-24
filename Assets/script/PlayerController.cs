@@ -14,12 +14,16 @@ public class PlayerController : MonoBehaviour
     public Vector2 box;
     public LayerMask layerMaskground;
     public combatController combat;
-
+    public float radiusCircle;
+    public LayerMask layercheck;
+    public GameObject target;
+    public Collider2D[] listTarget;
     bool isgrounded;
     bool isjumping;
     int lvJump = 1;
     int num_jump = 0;
     float axisraw_x;
+    int targetindex = 0;
     private void Update()
     {
         rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -4f, 7));
@@ -31,12 +35,48 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("y_velocity",Mathf.Round (Mathf.Clamp( rb.velocity.y,0,3) ));
    
         atk();
+        target_check();
     }
     private void FixedUpdate()
     {
         move();
         flip();
     }
+
+    public void target_check()
+    {
+        listTarget = Physics2D.OverlapCircleAll(transform.position, radiusCircle,layercheck);
+
+        if (listTarget!=null && listTarget.Length > 0 && !target.active)
+        {
+            target.SetActive(true);
+            target.transform.position = new Vector2(listTarget[targetindex].transform.position.x,
+            listTarget[targetindex].transform.position.y + Mathf.Abs(listTarget[targetindex].bounds.size.y / 2));
+        }
+        else if(listTarget == null || listTarget.Length <= 0 && target.active)
+        {
+            targetindex = 0;
+            listTarget = null;
+            target.SetActive(false);
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            btn_changeTarget();
+        }
+    }
+
+    public void btn_changeTarget()
+    {
+        if (listTarget == null || listTarget.Length <= 0) return;
+        if (targetindex < listTarget.Length - 1)
+            targetindex++;
+        else if(targetindex > 0) targetindex--;
+        target.transform.position = new Vector2(listTarget[targetindex].transform.position.x,
+            listTarget[targetindex].transform.position.y + Mathf.Abs(listTarget[targetindex].bounds.size.y / 2));
+    }
+
     public void move()
     {
         if (combat.isAtk) return;
@@ -112,5 +152,7 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(checkground.position, box);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, radiusCircle);
     }
 }
