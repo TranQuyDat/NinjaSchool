@@ -7,6 +7,8 @@ TagManager:
   - ground
   - wpSlash
   - step
+  - npc
+  - items
   layers:
   - Default
   - TransparentFX

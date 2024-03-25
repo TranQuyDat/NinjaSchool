@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8583691979281992500}
   m_Layer: 9
   m_Name: wp_fan
-  m_TagString: Untagged
+  m_TagString: items
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  nameobj: fan
   icon: {fileID: 7716613088079881844}
   itdata: {fileID: 11400000, guid: 8443503bfc0e188428c1a987eae20caf, type: 2}
   boxcollider: {fileID: 528083621408344334}

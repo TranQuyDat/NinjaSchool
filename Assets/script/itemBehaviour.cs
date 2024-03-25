@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class itemBehaviour : MonoBehaviour
 {
-    public GameObject player;
+    [HideInInspector] public GameObject player;
     public void use(itemData itemdata)
     {
         if(itemdata.tyleItem == tyleItems.wp)

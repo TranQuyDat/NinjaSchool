@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class items : itemBehaviour
 {
+    public string nameobj;
     public SpriteRenderer icon;
     public itemData itdata;
     public BoxCollider2D boxcollider;
