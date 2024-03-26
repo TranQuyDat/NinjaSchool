@@ -10,6 +10,7 @@ public class targetController : MonoBehaviour
     public LayerMask layercheck;
     public List<Collider2D> listTarget;
     public TextMeshProUGUI txt_nameTarget;
+    public GameObject objTarget;
     int targetindex = 0;
     // Update is called once per frame
     void Update()
@@ -26,15 +27,18 @@ public class targetController : MonoBehaviour
         sprite.enabled = true;
         if (listTarget == null || listTarget.Count <= 0 || !sprite.enabled || targetindex > listTarget.Count - 1)
         {
+            //thuc hien khi target khong target vao dau || targetindex da vuot ra ngoai range
             targetindex = 0;
             sprite.enabled = false;
             txt_nameTarget.text = "";
+            objTarget = null;
             return;
         }
 
-        this.transform.position = new Vector2(listTarget[targetindex].transform.position.x,
+        this.transform.position = new Vector2(listTarget[targetindex].transform.position.x, //set vi tri cho target
         listTarget[targetindex].transform.position.y + Mathf.Abs(listTarget[targetindex].bounds.size.y / 2));
-        nameTarget(listTarget[targetindex].gameObject);
+        nameTarget(listTarget[targetindex].gameObject); // ham gan name cho txt_nametarget;
+        objTarget = listTarget[targetindex].gameObject;
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {

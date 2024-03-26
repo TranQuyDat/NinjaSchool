@@ -8,6 +8,10 @@ public class items : itemBehaviour
     public SpriteRenderer icon;
     public itemData itdata;
     public BoxCollider2D boxcollider;
+
+    public float radius_check = 0.3f;
+    public LayerMask layermask;
+
     private void Awake()
     {
         icon.sprite = itdata.iconIt;
@@ -15,7 +19,8 @@ public class items : itemBehaviour
     }
     private void Update()
     {
-        if(icon.sprite != itdata.iconIt)
+        collectItems();
+        if (icon.sprite != itdata.iconIt)
         {
             icon.sprite = itdata.iconIt;
             resetSize(icon.sprite);
@@ -29,12 +34,18 @@ public class items : itemBehaviour
         boxcollider.size = new Vector2(obj.bounds.size.x, obj.bounds.size.y);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+   public void collectItems()
     {
-        if (Input.GetKeyDown(KeyCode.E) && collision.CompareTag("Player")  )
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, radius_check,layermask);
+        if(hit !=null )
         {
-                player = collision.gameObject;
-                use(itdata);
+            use(itdata,hit.gameObject);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, radius_check);
     }
 }

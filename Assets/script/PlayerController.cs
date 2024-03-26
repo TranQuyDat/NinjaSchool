@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 box;
     public LayerMask layerMaskground;
     public combatController combat;
+    public targetController tg;
 
     bool isgrounded;
     bool isjumping;
@@ -97,8 +98,8 @@ public class PlayerController : MonoBehaviour
 
     public void atk()
     {
-        
-        if( (Input.GetKeyDown(KeyCode.E) ) 
+        if (tg.objTarget != null && tg.objTarget.CompareTag("npc")) return;
+        if( (Input.GetKeyDown(KeyCode.E)  ) 
             && !combat.isAtk)
         {
             combat.startCombo();

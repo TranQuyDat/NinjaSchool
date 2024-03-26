@@ -9,6 +9,7 @@ public class combatController : MonoBehaviour
     public Animator ani;
     public int comboindex=1;
     public bool isAtk;
+  
     private void Start()
     {
         ani.runtimeAnimatorController = cbdata.aniController;
@@ -21,6 +22,8 @@ public class combatController : MonoBehaviour
         {
             ani.runtimeAnimatorController = cbdata.aniController;
         }
+  
+
     }
     public void startCombo()
     {

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class itemBehaviour : MonoBehaviour
 {
-    [HideInInspector] public GameObject player;
-    public void use(itemData itemdata)
+    public GameObject player;
+
+    public void use(itemData itemdata , GameObject player)
     {
-        if(itemdata.tyleItem == tyleItems.wp)
+        this.player = player;
+        if (itemdata.tyleItem == tyleItems.wp)
         {
             itemdataWP itdata = (itemdataWP)itemdata;
             useitem(itdata);
+            
             return;
         }
     }
@@ -26,5 +29,6 @@ public class itemBehaviour : MonoBehaviour
         combatController cbctrl = player.GetComponent<combatController>();
         cbctrl.cbdata = itemdatawp.cbdata;
         cbctrl.wpsprite.sprite = itemdatawp.handleWP;
+        Destroy(this.gameObject);
     }
 }
