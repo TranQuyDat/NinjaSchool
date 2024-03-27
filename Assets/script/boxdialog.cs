@@ -38,7 +38,7 @@ public class boxdialog : MonoBehaviour
         txtbox = this.GetComponentInChildren<TextMeshPro>();
         txtbox.text = "";
         this.personIsTalking = person.gameObject;
-        personIsTalking.GetComponent<npcAI>().istalking = true;
+        personIsTalking.GetComponent<optionNPC>().istalking = true;
         InvokeRepeating("nextChar", 0f, timedelay);
     }
     public void nextChar()
@@ -56,7 +56,7 @@ public class boxdialog : MonoBehaviour
     }
     public void endText()
     {
-        personIsTalking.GetComponent<npcAI>().istalking = false;
+        personIsTalking.GetComponent<optionNPC>().istalking = false;
         CancelInvoke("nextChar");
         isactive = false;
         dia.list_dialogObj.Remove(this.gameObject);

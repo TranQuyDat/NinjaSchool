@@ -8,12 +8,14 @@ public class items : itemBehaviour
     public SpriteRenderer icon;
     public itemData itdata;
     public BoxCollider2D boxcollider;
+    public targetController tg;
 
     public float radius_check = 0.3f;
     public LayerMask layermask;
 
     private void Awake()
     {
+        tg = FindObjectOfType<targetController>();
         icon.sprite = itdata.iconIt;
         resetSize(icon.sprite);
     }
@@ -37,9 +39,9 @@ public class items : itemBehaviour
    public void collectItems()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius_check,layermask);
-        if(hit !=null )
+        if(Input.GetKeyDown(KeyCode.E) && tg.objTarget!=null && tg.objTarget.CompareTag("items") && this.gameObject == tg.objTarget)
         {
-            use(itdata,hit.gameObject);
+            use(itdata,tg.player);
         }
     }
 

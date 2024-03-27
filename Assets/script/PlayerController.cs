@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     public void atk()
     {
-        if (tg.objTarget != null && tg.objTarget.CompareTag("npc")) return;
+        if (tg.objTarget != null && (tg.objTarget.CompareTag("npc") || tg.objTarget.CompareTag("items"))) return;
         if( (Input.GetKeyDown(KeyCode.E)  ) 
             && !combat.isAtk)
         {
