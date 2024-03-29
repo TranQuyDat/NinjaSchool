@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4135877157862253145}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: slotArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2100171353564099564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206263117986899101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.114, y: -0.093999915, z: 0}
+  m_LocalPosition: {x: -0.054999985, y: -0.093999915, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -75,7 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6778406906566843433}
   - component: {fileID: 178225491471896039}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: step
   m_TagString: step
   m_Icon: {fileID: 2800000, guid: 3a59b99c9a154054cbd06ccc50aa6cdf, type: 3}
@@ -90,7 +90,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066901833387635857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.053, y: -0.425, z: 0}
+  m_LocalPosition: {x: 0.006000016, y: -0.425, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2914545097044936668}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,6 +176,89 @@ Transform:
   m_Father: {fileID: 2100171353564099564}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1645437542242290654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4504803622563616835}
+  - component: {fileID: 4721148812287721281}
+  m_Layer: 0
+  m_Name: camerabodyplayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4504803622563616835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645437542242290654}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.011126518, y: 0.021304071, z: -2.2518497}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6729675473670825216}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &4721148812287721281
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645437542242290654}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 0.57323694
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 8400000, guid: 4b43bb362b85e3340b30aac44f9e410b, type: 2}
+  m_TargetDisplay: 1
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 0
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &2697908985071244594
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7443109776680717521}
   - component: {fileID: 8141109292634277862}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +355,7 @@ GameObject:
   - component: {fileID: 3026715928194094271}
   - component: {fileID: 1030081632816027916}
   - component: {fileID: 4740003578100682250}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +457,7 @@ GameObject:
   - component: {fileID: 6456838397130465650}
   - component: {fileID: 5877937086810729376}
   - component: {fileID: 7133044319250047110}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526229235878235380}
   - component: {fileID: 7102147484015673525}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: slot_wp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2169008197572653006}
   - component: {fileID: 2263486979435577971}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: slot_bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3506276317646133306}
   - component: {fileID: 7254164437160364530}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: hit
   m_TagString: wpSlash
   m_Icon: {fileID: 0}
@@ -732,7 +815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273340005618201892}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5590637511480315122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: 0, z: 0}
+  m_LocalPosition: {x: 0.054, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -796,8 +879,9 @@ Transform:
   - {fileID: 6273340005618201892}
   - {fileID: 2100171353564099564}
   - {fileID: 6778406906566843433}
+  - {fileID: 4504803622563616835}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2302784254018895631
 Rigidbody2D:
@@ -849,11 +933,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   combat: {fileID: 136350662363155049}
-  radiusCircle: 0.5
-  layercheck:
-    serializedVersion: 2
-    m_Bits: 1024
-  target: {fileID: 0}
+  tg: {fileID: 0}
 --- !u!95 &4663325219349374365
 Animator:
   serializedVersion: 5
@@ -1029,8 +1109,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.073376596, y: 0.07902181}
-  m_Size: {x: 0.45739424, y: 0.8419564}
+  m_Offset: {x: 0.0005302131, y: 0.038102567}
+  m_Size: {x: 0.45360416, y: 0.8876369}
   m_Direction: 0
 --- !u!210 &6293674487384286384
 SortingGroup:
@@ -1055,7 +1135,7 @@ GameObject:
   - component: {fileID: 7923631416938657490}
   - component: {fileID: 5778206145277727836}
   - component: {fileID: 8882496425370474580}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1155,7 +1235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2463740130458210925}
   - component: {fileID: 7643403155116328579}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bow in hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
